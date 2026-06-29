@@ -3,180 +3,323 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Graduate Researcher</title>
+    <title>Sirray Smith | Graduate Researcher</title>
     <style>
-        /* Base Styles & Professional Color Palette */
+        /* Modern, Minimalist Slate Palette */
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --accent-color: #2563eb; /* Professional Slate Blue */
+            --accent-hover: #1d4ed8;
+            --border-color: #e2e8f0;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.7;
+            color: var(--text-main);
+            background-color: var(--bg-color);
             margin: 0;
             padding: 0;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
-        /* Header Styling */
+        /* Clean, Integrated Header & Nav */
         header {
-            background-color: #1e3d59; /* Deep Navy */
-            color: #ffffff;
-            padding: 40px 0;
-            text-align: center;
-            border-bottom: 4px solid #ffc13b; /* Amber Accent */
+            text-align: left;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
         }
 
         header h1 {
             margin: 0;
             font-size: 2.5rem;
-            font-weight: 600;
+            font-weight: 700;
+            letter-spacing: -0.05em;
         }
 
         header p {
-            margin: 10px 0 0 0;
-            font-size: 1.2rem;
-            color: #e0e0e0;
+            margin: 8px 0 0 0;
+            font-size: 1.1rem;
+            color: var(--text-muted);
         }
 
-        /* Navigation Bar */
         nav {
-            background-color: #17b978; /* Muted Green Accent */
-            text-align: center;
-            padding: 10px 0;
-            position: sticky;
-            top: 0;
+            margin-top: 15px;
         }
 
         nav a {
-            color: white;
+            color: var(--text-muted);
             text-decoration: none;
-            font-weight: bold;
-            margin: 0 15px;
-            transition: color 0.3s;
+            font-weight: 500;
+            margin-right: 20px;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
         }
 
         nav a:hover {
-            color: #1e3d59;
+            color: var(--accent-color);
         }
 
-        /* Section Styling */
+        /* Profile Layout Split */
+        .profile-container {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .bio-text {
+            flex: 2;
+        }
+
+        .profile-pic-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-pic {
+            width: 220px;
+            height: 220px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Section Cards */
         section {
-            background: #ffffff;
-            padding: 30px;
-            margin: 20px 0;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            background: var(--card-bg);
+            padding: 35px;
+            margin: 30px 0;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
         }
 
         h2 {
-            color: #1e3d59;
-            border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 5px;
+            font-size: 1.4rem;
+            color: var(--text-main);
             margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 600;
         }
 
-        /* Lists & Items */
+        /* Project Grid Layout */
+        .project-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .project-card {
+            display: flex;
+            gap: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid var(--border-color);
+            align-items: flex-start;
+        }
+
+        .project-card:last-child {
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .project-info {
+            flex: 3;
+        }
+
+        .project-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            color: var(--text-main);
+        }
+
+        .project-poster-container {
+            flex: 2;
+        }
+
+        .poster-img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .poster-img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Lists & Links Layout */
         ul {
             list-style-type: none;
             padding: 0;
+            margin: 0;
         }
 
         li {
             margin-bottom: 15px;
-            padding-left: 10px;
-            border-left: 3px solid #17b978;
         }
 
-        .date {
-            font-style: italic;
-            color: #777;
-            float: right;
+        .contact-info strong {
+            color: var(--text-muted);
+            font-weight: 500;
+            display: inline-block;
+            width: 70px;
         }
 
-        /* Contact / Footer */
+        .links-row {
+            margin-top: 15px;
+        }
+
+        .links-row a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-right: 20px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .links-row a:hover {
+            text-decoration: underline;
+        }
+
         footer {
             text-align: center;
-            padding: 30px 0;
-            color: #777;
-            font-size: 0.9rem;
+            padding: 40px 0 20px 0;
+            color: var(--text-muted);
+            font-size: 0.85rem;
         }
 
-        footer a {
-            color: #1e3d59;
-            text-decoration: none;
-            font-weight: bold;
-        }
+        /* Responsive Fixes for Smaller Screens */
+        @media (max-width: 768px) {
+            .profile-container {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 25px;
+            }
+            
+            .project-card {
+                flex-direction: column;
+            }
 
-        /* Responsive adjustments */
-        @media (max-width: 600px) {
-            .date {
-                float: none;
-                display: block;
-                margin-top: 5px;
+            .project-poster-container {
+                width: 100%;
+            }
+
+            header {
+                text-align: center;
+            }
+
+            nav a {
+                margin: 0 10px;
             }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Jane Doe</h1>
-        <p>Ph.D. Candidate in Computer Science | XYZ University</p>
-    </header>
-
-    <nav>
-        <a href="#about">About Me</a>
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
     <div class="container">
 
+        <header>
+            <h1>Jane Doe</h1>
+            <p>Ph.D. Candidate in Computer Science &bull; XYZ University</p>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#research">Research Interests</a>
+                <a href="#projects">Projects & Posters</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
         <section id="about">
-            <h2>About Me</h2>
-            <p>Welcome! I am a graduate researcher at XYZ University working under the supervision of Dr. Smith. My work sits at the intersection of machine learning and data privacy. I am passionate about developing algorithms that are both highly efficient and ethically sound.</p>
-            <p>Prior to my graduate studies, I received my B.S. in Mathematics from ABC University and spent a year working as a data analyst.</p>
+            <div class="profile-container">
+                <div class="bio-text">
+                    <h2>About Me</h2>
+                    <p>Welcome! I am a graduate researcher at XYZ University working under the supervision of Dr. Smith. My work sits at the intersection of machine learning and data privacy. I am passionate about developing algorithms that are both highly efficient and ethically sound.</p>
+                    <p>Prior to my graduate studies, I received my B.S. in Mathematics from ABC University and spent a year working as a data analyst.</p>
+                    
+                    <div class="links-row">
+                        <a href="resume.pdf" target="_blank">📄 View Resume / CV</a>
+                        <a href="https://your-research-site.com" target="_blank">🌐 Research Hub</a>
+                    </div>
+                </div>
+                <div class="profile-pic-container">
+                    <img src="profile.jpg" alt="Jane Doe" class="profile-pic">
+                </div>
+            </div>
         </section>
 
         <section id="research">
             <h2>Research Interests</h2>
             <ul>
-                <li><strong>Privacy-Preserving Machine Learning:</strong> Investigating differential privacy in large language models.</li>
-                <li><strong>Algorithmic Fairness:</strong> Mitigating bias in predictive healthcare models.</li>
+                <li>
+                    <strong>Privacy-Preserving Machine Learning:</strong> 
+                    Investigating differential privacy in large language models to safeguard sensitive user data.
+                </li>
+                <li>
+                    <strong>Algorithmic Fairness:</strong> 
+                    Mitigating historic bias and improving accountability in predictive healthcare models.
+                </li>
             </ul>
         </section>
 
-        <section id="publications">
-            <h2>Selected Publications</h2>
-            <ul>
-                <li>
-                    <span class="date">2025</span>
-                    <strong>Doe, J.</strong>, & Smith, A. "Towards Fairer Models in Healthcare." <em>Journal of AI Research</em>, 12(3), 45-56.
-                </li>
-                <li>
-                    <span class="date">2024</span>
-                    <strong>Doe, J.</strong> "A Survey of Differential Privacy." <em>Proceedings of the ABC Conference</em>.
-                </li>
-            </ul>
+        <section id="projects">
+            <h2>Past Projects & Academic Posters</h2>
+            <div class="project-grid">
+                
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3 class="project-title">Mitigating Bias in Healthcare Predictors</h3>
+                        <p>Developed an algorithmic auditing framework to detect and neutralize proxy variables causing demographic disparity in clinical outcome tools. Presented findings at the ABC Regional Symposium.</p>
+                        <p class="links-row"><a href="https://github.com/yourusername/project1" target="_blank">Code Repository &rarr;</a></p>
+                    </div>
+                    <div class="project-poster-container">
+                        <img src="poster1.jpg" alt="Healthcare Predictors Research Poster" class="poster-img">
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3 class="project-title">Differentially Private LLM Fine-Tuning</h3>
+                        <p>An exploratory analysis evaluating the trade-off between semantic coherence and strict epsilon privacy bounds during the optimization phases of open-weight language models.</p>
+                        <p class="links-row"><a href="https://your-research-site.com/project2" target="_blank">Project Website &rarr;</a></p>
+                    </div>
+                    <div class="project-poster-container">
+                        <img src="poster2.jpg" alt="Differential Privacy Research Poster" class="poster-img">
+                    </div>
+                </div>
+
+            </div>
         </section>
 
         <section id="contact">
-            <h2>Contact & Links</h2>
+            <h2>Contact & Connect</h2>
             <p>Feel free to reach out via email or connect with me on professional platforms:</p>
-            <p>
-                <strong>Email:</strong> jane.doe@university.edu<br>
+            <p class="contact-info">
+                <strong>Email:</strong> <a href="mailto:jane.doe@university.edu">jane.doe@university.edu</a><br>
                 <strong>Office:</strong> 404 Tech Hall, Campus Drive
             </p>
-            <p>
-                <a href="https://github.com" target="_blank">GitHub</a> | 
-                <a href="https://linkedin.com" target="_blank">LinkedIn</a> | 
-                <a href="https://scholar.google.com" target="_blank">Google Scholar</a>
-            </p>
+            <div class="links-row">
+                <a href="resume.pdf" target="_blank">Resume / CV</a>
+                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                <a href="https://github.com" target="_blank">GitHub</a>
+                <a href="https://your-research-site.com" target="_blank">Personal Research Site</a>
+            </div>
         </section>
 
         <footer>
